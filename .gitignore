@@ -30,7 +30,6 @@ wheels/
 *~
 
 # Config
-config.yaml
 *.log
 
 # OS
