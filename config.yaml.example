@@ -1,0 +1,39 @@
+# Disk Monitor Configuration
+
+# List of servers to monitor
+servers:
+  - host: "192.168.1.10"
+    user: "admin"
+    key_file: "~/.ssh/id_rsa"
+    # password: "optional_password"  # Use key_file OR password
+  
+  - host: "192.168.1.11"
+    user: "root"
+    key_file: "~/.ssh/id_rsa"
+
+# Disk usage threshold (percentage)
+threshold: 80
+
+# Alert configuration
+alerts:
+  # Email alerts
+  email:
+    enabled: false
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    sender: "alerts@example.com"
+    password: "your_app_password"
+    recipients:
+      - "admin@example.com"
+      - "ops@example.com"
+  
+  # Slack webhook
+  slack:
+    enabled: true
+    webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+    channel: "#alerts"
+
+# SSH connection settings
+ssh:
+  timeout: 10
+  retry_attempts: 3
